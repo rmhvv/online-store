@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css" /> 
+  <script defer src="js/dashboard.js"></script>
+</head>
+<body>
+  <header>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">
+                <img src="img/A0607B9B-A499-444C-AC69-E954A7097513 (2).PNG" alt="Logo">
+            </a>
+
+            <button class="menu-toggle">
+                <img src="img/E0016FD0-A1D9-4434-919C-635C13500D92.PNG" alt="Menu">
+            </button>
+
+            <div class="dropdown-menu">
+                <a href="newpage.html">SHOP</a>
+                <a href="bag.html">BAG</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="profile.html">PROFILE</a>
+            </div>
+        </div>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <h2>Welcome, <span id="userEmail">User</span>!</h2>
+      <p>This is your personal dashboard.</p>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </section>
+  </main>
+</body>
+</html>

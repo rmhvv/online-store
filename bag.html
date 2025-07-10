@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="css/bag.css">
+    <script src="js/bag-frontend.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">
+                <img src="img/A0607B9B-A499-444C-AC69-E954A7097513 (2).PNG" alt="Logo">
+            </a>
+
+            <button class="menu-toggle">
+                <img src="img/E0016FD0-A1D9-4434-919C-635C13500D92.PNG" alt="Menu">
+            </button>
+
+            <div class="dropdown-menu">
+                <a href="newpage.html">SHOP</a>
+                <a href="bag.html">BAG</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="profile.html">PROFILE</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="bag-container">
+        <h1>Your Bag</h1>
+        <div id="bagItems" class="bag-items"></div>
+        <p id="emptyMessage">Loading...</p>
+        <div id="total" class="total"></div>
+    </main>
+
+    <script src="js/bag.js" defer></script>
+
+</body>
+
+</html>
