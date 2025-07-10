@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --index: calc(1vw + 1vh);
+    --transition: 1.5s cubic-bezier(.05, .5, 0, 1);
+}
+@font-face {
+    font-family: kamerik-3d;
+    src: url(../fonts/kamerik205-heavy.woff2);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: merriweather-italic-3d;
+    src: url(../fonts/merriweather-regular-italic.woff2);
+}
+
+body, html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    background-color:black;
+    color: white;
+    font-family: kamerik-3d;
+    text-shadow: 0px 0px 15px black;
+}
+
+.logo {
+    --logo-size: calc(var(--index)* 7.8);
+    width: var(--logo-size);
+    height: var(--logo-size);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    left: calc(50% - calc(var(--logo-size) / 2));
+    top: calc(var(--index) * 2.8);
+    z-index: 1;
+    filter: drop-shadow(0px 0px 4px black);
+}
+
+.layers {
+    perspective: 1000px;
+}
+.layers__container {
+    height: 100vh;
+    min-height: 500px;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition);
+}
+
+.layers__item {
+    position: absolute;
+    inset: -5vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center
+    ;
+}
+
+.layer-1 {
+    transform: translateZ(-155px) scale(1.22);
+}
+.layer-3 {
+    transform: translateZ(180px) scale(.8);
+}
+.layer-4 {
+    transform: translateZ(190px) scale(.78);
+}
+.layer-45 {
+    transform: translateZ(80px) scale(.78);
+}
+.layer-5 {
+    transform: translateZ(300px) scale(.65);
+}
+.hero-content {
+    font-size: calc(var(--index) * 2.9);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: calc(var(--index) * .15);
+    line-height: 1.35em;
+    margin-top: calc(var(--index) * 5.5);
+}
+
+.hero-content span {
+    display: block;
+}
+
+.hero-content__p {
+    text-transform: none;
+    font-family: merriweather-italic-3d;
+    letter-spacing: normal;
+    font-size: calc(var(--index) * .93);
+    line-height: 3;
+    color: white;
+     text-shadow: 0 0 15px black;
+}
+
+.button-start {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: calc(var(--index) * .9);
+    letter-spacing: -.02vw;
+    padding: calc(var(--index) * .7) calc(var(--index) * 1.25);
+    background-color: transparent;
+    color: white;
+    border-radius: 10em;
+    border: rgb(255 255 255 / .4) 3px solid;
+    outline: none;
+    cursor: pointer;
+}
+.layer-3, .layer-4, .layer-5 {
+    pointer-events: none;
+}
+

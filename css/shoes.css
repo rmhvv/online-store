@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: kamerik-3d;
+    src: url(../fonts/kamerik205-heavy.woff2);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: merriweather-italic-3d;
+    src: url(../fonts/merriweather-regular-italic.woff2);
+}
+
+@font-face {
+    font-family: monsieur;
+    src: url(../fonts/Monsieur_La_Doulaise/MonsieurLaDoulaise-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: lilita;
+    src: url(../fonts/Lilita_One/LilitaOne-Regular.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: oswald;
+    src: url(../fonts/Oswald/Oswald-VariableFont_wght.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: unica;
+    src: url(../fonts/UnicaOne-Regular.ttf);
+    font-weight: 500;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightgray;
+    color: #000;
+}
+
+.header {
+    width: 100%;
+    padding: 10px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    transition: background-color 0.6s ease, backdrop-filter 0.6s ease;
+
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+}
+
+.header.scrolled {
+    background-color: rgba(129, 129, 129, 0.55);
+    backdrop-filter: blur(8px);
+}
+
+.header__inner {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    display: block
+}
+
+.product-grid {
+  padding: 30px 40px;
+  max-width: 1400px;
+  margin: 100px auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.product-card {
+  background: transparent; 
+  max-width: 400px;
+  flex: 1 1 300px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 20px;
+
+}
+
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 20px pink;
+}
+
+.product-image-wrapper {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.product-image-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.product-card:hover .product-image-hover {
+  opacity: 1;
+}
+
+.product-card:hover .product-image-default {
+  opacity: 0;
+}
+
+.shop-heading {
+    text-align: center;
+}
+
+.shop-heading h2 {
+    font-size: 36px;
+    color: #222;
+    text-shadow: 0 0 10px;
+    font-family: unica, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .hero__content h2 {
+    font-size: 30px;
+  }
+
+  .product-title {
+    font-size: 20px;
+  }
+
+  .shop-heading h2 {
+    font-size: 26px;
+  }
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.menu-toggle img {
+    width: 32px;
+    height: 32px;
+}
+
+.menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 1001;
+}
+
+.menu-toggle img {
+  width: 50px;
+  height: auto;
+  transition:transform 0.4s ease;
+}
+
+.menu-toggle.rotated img {
+  transform: rotate(45deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110px;
+  right: 10px;
+  display: none;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 12px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  font-family: unica, sans-serif;
+}
+
+.dropdown-menu a:hover {
+  color: #fc96a5;
+}
+
+.text-info {
+    text-align: end;
+    margin: 10px 10px;
+}

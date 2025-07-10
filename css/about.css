@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+font-face {
+    font-family: kamerik-3d;
+    src: url(../fonts/kamerik205-heavy.woff2);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: merriweather-italic-3d;
+    src: url(../fonts/merriweather-regular-italic.woff2);
+}
+
+
+@font-face {
+    font-family: unica;
+    src: url(../fonts/UnicaOne-Regular.ttf);
+    font-weight: 500;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightgray;
+    color: #000;
+}
+
+.header {
+    width: 100%;
+    padding: 10px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.6s ease, backdrop-filter 0.6s ease;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+}
+
+.header.scrolled {
+    background-color: rgba(129, 129, 129, 0.55);
+    backdrop-filter: blur(8px);
+}
+
+.header__inner {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    display: block
+}
+
+.hero {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.hero__content {
+    text-align: center;
+    color: #000;
+    font-size: 26px;
+    margin-bottom: 20px;
+    animation: effect 3s infinite;
+}
+
+@keyframes effect {
+    0% {
+        text-shadow: 5px 0px grey;
+    }
+
+    50% {
+        text-shadow: -5px 0px grey;
+    }
+
+    100% {
+        text-shadow: 5px 0px grey;
+    }
+}
+
+.hero__info {
+    text-align: justify;
+    color: #000;
+    font-size: 16px;
+    text-indent: 40px;
+    padding: 0px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.support_info {
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 60px;
+}
+
+.supp h2 {
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.supp {
+    text-align: center;
+    color: #000;
+    font-size: 26px;
+    animation: effect 3s infinite;
+}
+
+.tgtext {
+    margin-top: 60px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.button-start {
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 58px;
+    box-shadow: 2px 2px 10px black;
+    transition: all 0.3s ease;
+}
+
+.button-start:hover {
+    box-shadow: 0 0px 18px black;
+    transform: translateY(-2px);
+}
+
+.tgbutton {
+    width: 50px;
+    height: 50px;
+}
+
+.background-canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.menu-toggle img {
+    width: 32px;
+    height: 32px;
+}
+
+
+.menu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 1001;
+}
+
+.menu-toggle img {
+  width: 50px;
+  height: auto;
+  transition:transform 0.4s ease;
+}
+
+.menu-toggle.rotated img {
+  transform: rotate(45deg);
+}
+
+/* Выпадающее меню справа */
+.dropdown-menu {
+  position: absolute;
+  top: 110px;
+  right: 10px;
+  display: none;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 12px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  font-family: unica, sans-serif;
+}
+
+.dropdown-menu a:hover {
+  color: #fc96a5;
+}
